@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Карты мира</title>
+
+    <script src="js/JQ.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style media="screen">
+        /* tilda style */
+            .t396__elem {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            #rec193996608, .t396__carrier, .t396__filter, .t396__artboard  {
+                height: auto !important;
+            }
+
+            .t396__elem {
+                position: static !important;
+            }
+
+            .t396__filter, .t396__carrier {
+                z-index: -1000 !important;
+            }
+
+            .t-input {
+                min-width: 300px !important;
+                padding: 10px !important;
+                text-overflow: ellipsis !important;
+            }
+
+        /* general style*/
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                width: 100%;
+
+                margin: 0;
+                padding: 0;
+
+                font-size: 18px;
+                font-family: 'Roboto', sans-serif;
+
+                overflow-x: hidden;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            ul, li, menu {
+                margin: 0;
+                padding: 0;
+
+                list-style: none;
+                list-style-type: none;
+            }
+
+            a {
+                font-family: inherit;
+                color: inherit;
+                text-decoration: none;
+            }
+
+            button {
+                margin: 0;
+                padding: 0;
+                background: none;
+                border: none;
+
+                cursor: pointer;
+            }
+
+            input, textarea {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+
+            h1, h2, h3, h4 {
+                margin: 0;
+                padding: 0;
+            }
+
+            option {
+                font-size: inherit;
+            }
+
+            .dis_none {
+                display: none !important;
+            }
+
+        /* general_section :D */
+
+            .general_section {
+                width: 100%;
+                max-width: 2220px;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+
+                margin: 0 auto;
+
+                background-image: url(css/img/i3.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                z-index: 999999;
+            }
+
+        /* Start */
+
+            .section_bg {
+                width: 100%;
+                max-width: 1920px;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .start_heading {
+                width: 100%;
+
+                padding: 50px;
+
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 50px;
+            }
+
+            .start_content {
+                display: flex;
+                justify-content: space-between;
+
+                padding: 0 50px;
+            }
+
+            .content_text {
+                min-width: 300px;
+
+                margin: 80px auto;
+
+                font-size: 48px;
+                text-align: center;
+            }
+
+            .start_botton_con {
+                margin-top: 50px;
+            }
+
+            .start_button {
+                padding: 20px 30px;
+                border: 3px solid #fff;
+                border-radius: 60px;
+
+                background-color: #0000002e;
+
+                text-align: center;
+                line-height: 0.8;
+                font-size: 34px;
+                font-family: "Myriad Pro";
+                color: #fff;
+            }
+
+        /* content */
+
+            .top_button_con {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+
+                padding: 10px;
+                margin: 25px auto;
+            }
+
+            .type_model {
+                min-width: 300px;
+
+                padding: 10px 20px;
+                border: 1px solid #000;
+                border-radius: 30px;
+                margin: 20px auto;
+
+                text-align: center;
+                font-size: 48px;
+
+                transition: .2s;
+            }
+
+            .active_type_model {
+                background-color: rgba(239, 199, 56, 0.8);
+            }
+
+            .type_model:hover {
+                background-color: rgba(239, 199, 56, 0.8);
+            }
+
+            .sub_select_con {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                padding: 10px;
+                margin: 0 auto;
+            }
+
+            .select_param {
+                min-width: 300px;
+
+                padding: 10px 20px;
+                border: 1px solid #000;
+                margin: 20px auto;
+
+                background-color: #0000;
+
+                text-align: center;
+                font-size: 36px;
+
+                transition: .2s;
+            }
+
+            .order_info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                bottom: 50px;
+                right: 50px;
+                width: 100%;
+                min-width: 300px;
+            }
+
+            .order_price {
+                min-width: 250px;
+
+                padding: 10px 20px;
+                border: 1px solid #000;
+                border-radius: 30px;
+                margin-left: auto;
+
+                background-color: #fffb;
+
+                font-size: 30px;
+                text-align: left;
+            }
+
+            .make_order {
+                min-width: 250px;
+
+                padding: 10px 20px;
+                border: 1px solid #000;
+                border-radius: 30px;
+                margin-left: 20px;
+
+                background-color: rgba(247,105,105,.8);
+
+                font-size: 30px;
+
+                transition: .2s;
+            }
+
+            .make_order:hover {
+                background-color: rgb(247,105,105);
+            }
+
+            .image_item1 {
+                max-width: 300px;
+                max-height: 300px;
+                width: 100%;
+            }
+
+            .image_item2 {
+                max-width: 400px;
+                max-height: 400px;
+                width: 100%;
+            }
+
+            .image_item3 {
+                max-width: 500px;
+                max-height: 500px;
+                width: 100%;
+            }
+
+            .block_for_orderInfo {
+                display: block;
+                width: 100%;
+                height: 300px;
+            }
+
+            .select_con_left, .select_con_right {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+        /* Order form */
+
+        .order_form_con {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .order_form {
+            margin-top: 50px;
+        }
+
+        .order_form_item {
+            margin: 20px;
+        }
+
+        .submit_form {
+            margin: 10px auto;
+        }
+
+        .section_order {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        /* media */
+
+            @media (max-width: 1500px) {
+                .sub_select_con {
+                    flex-direction: row;
+                }
+
+                .select_param {
+                    margin: 20px auto;
+                }
+
+                .type_model {
+                    font-size: 36px;
+                }
+
+                .select_con_left, .select_con_right {
+                    width: 40%;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
+
+                .select_con_left {
+                    margin-right: auto;
+                }
+
+                .select_con_right {
+                    justify-content: flex-end;
+                    margin-left: auto;
+                }
+
+                .order_info {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: 1200px) {
+                .type_model {
+                    font-size: 24px;
+                }
+
+                .select_param {
+                    font-size: 24px;
+                }
+            }
+
+            @media (max-width: 1000px){
+                .top_button_con {
+                    flex-direction: column;
+                }
+
+                .start_button {
+                    margin-bottom: 40px;
+                }
+            }
+
+            @media (max-width: 800px) {
+                .select_con_left, .select_con_right {
+                    width: auto;
+
+                    margin: 0 auto;
+                }
+
+                .sub_select_con {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .order_info {
+                    right: 0;
+                    flex-direction: column;
+                }
+
+                .order_price {
+                    margin: 50px auto 20px;
+                }
+
+                .make_order {
+                    margin: 0 auto;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .start_heading {
+                    font-size: 24px;
+                }
+
+                .content_text {
+                    font-size: 20px;
+                }
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="general_section start_general_section">
+        <div class="section_bg">
+            <div class="start_heading">МАСТЕРСКАЯ ИНТЕРЬЕРНЫХ ИЗДЕЛИЙ ИЗ ДЕРЕВА</div>
+
+            <div class="start_content">
+                <div class="content_text">Интерьерные изделия ручной работы с индивидуальным дизайном на заказ</div>
+            </div>
+
+            <div class="start_botton_con">
+                <button class="start_button" type="button" name="button">Создать изделие</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="general_section dis_none">
+
+        <div class="top_button_con">
+            <button id="head" class="type_model active_type_model" type="button" name="button">3D головы</button>
+            <button id="tabletop" class="type_model" type="button" name="button">Настольные фигуры</button>
+            <button id="outdoor" class="type_model" type="button" name="button">Напольные фигуры</button>
+        </div>
+
+
+
+        <div class="sub_select_con head">
+            <div class="select_con_left">
+                <select id="select1" class="select_param select_value1" name="">
+                    <option value="0">Выберите фигуру</option>
+                    <option id="img1" value="3000">Олень</option>
+                </select>
+
+                <select class="select_param select_value2" name="">
+                    <option value="0">Размер фигуры</option>
+                    <option value="1234">Примеры</option>
+                </select>
+
+                <select class="select_param select_value3" name="">
+                    <option value="0">В сборке/без сборки</option>
+                    <option value="5463">Примеры</option>
+                </select>
+
+                <select class="select_param select_value4" name="">
+                    <option value="0">Цвет</option>
+                    <option value="12345">Примеры</option>
+                </select>
+            </div>
+
+            <div class="select_con_right">
+                <div class="img_con">
+                    <img class="dis_none img_hide image_item1 img1" src="css/img/i4.png">
+                    <img class="dis_none img_hide image_item2 img2" src="css/img/i5.png">
+                    <img class="dis_none img_hide image_item3 img3" src="css/img/i6.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="sub_select_con tabletop dis_none">
+            <div class="select_con_left">
+                <select id="select2" class="select_param select_value5" name="">
+                    <option value="0">Выберите фигуру</option>
+                    <option id="img2" value="">Белка</option>
+
+                </select>
+
+                <select class="select_param select_value6" name="">
+                    <option value="0">Размер фигуры</option>
+                    <option value="">Примеры</option>
+                </select>
+
+                <select class="select_param select_value7" name="">
+                    <option value="0">В сборке/без сборки</option>
+                    <option value="">Примеры</option>
+                </select>
+
+                <select class="select_param select_value8" name="">
+                    <option value="0">Цвет</option>
+                    <option value="">Примеры</option>
+                </select>
+            </div>
+
+            <div class="select_con_right">
+                <div class="img_con">
+                    <img class="dis_none image_item1 img4" src="css/img/i4.png">
+                    <img class="dis_none image_item2 img5" src="css/img/i5.png">
+                    <img class="dis_none image_item3 img6" src="css/img/i6.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="sub_select_con outdoor dis_none">
+            <div class="select_con_left">
+                <select id="select3" class="select_param select_value9" name="">
+                    <option value="0">Выберите фигуру</option>
+                    <option id="img3" value="">Слон</option>
+                </select>
+
+                <select class="select_param select_value10" name="">
+                    <option value="0">Размер фигуры</option>
+                    <option value="">Примеры</option>
+                </select>
+
+                <select class="select_param select_value11" name="">
+                    <option value="0">В сборке/без сборки</option>
+                    <option value="">Примеры</option>
+                </select>
+
+                <select class="select_param select_value12" name="">
+                    <option value="0">Цвет</option>
+                    <option value="">Примеры</option>
+                </select>
+            </div>
+
+            <div class="select_con_right">
+                <div class="img_con">
+                    <img class="dis_none image_item1 img7" src="css/img/i4.png">
+                    <img class="dis_none image_item2 img8" src="css/img/i5.png">
+                    <img class="dis_none image_item3 img9" src="css/img/i6.png">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Блок нужен чтобы инфа не налезала ни на че :D -->
+        <div class="block_for_orderInfo"></div>
+
+        <div class="order_info">
+
+            <div class="order_price">Итого: </div>
+            <button class="make_order" type="button" name="button">Сделать заказ</button>
+
+        </div>
+
+    </section>
+
+    <section class="general_section section_order dis_none">
+        <div class="order_form">
+            <form id="form195229029" name="form195229029" role="form" action="https://forms.tildacdn.com/procces/" method="POST" data-formactiontype="2" data-      inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_19  " data-success-callback="" data-success-popup="y" data-error-popup="y">
+                <input type="hidden" name="formservices[]" value="775a9e95b4915a00d17a1e2491712607" class="js-formaction-services">
+                <div class="js-successbox t-form__successbox t-text t-text_sm" style="display:none;"></div>
+                <div class="t-form__inputsbox">
+                    <div class="order_form_con">
+                        <div class="order_form_item">
+                            <div class="t-input-group t-input-group_nm" data-input-lid="1590404407175" style="margin-bottom:20px;">
+                                <div class="t-input-block">
+                                    <input type="text" name="Name" class="t-input js-tilda-rule " value="" placeholder="3D головы" data-tilda-rule="name" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590404416702" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590404416702" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Фигура</div>
+                                <div class="t-input-block">
+                                    <input id="select_value1" type="text" name="Фигура" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590404425033" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590404425033" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Размер фигуры</div>
+                                <div class="t-input-block">
+                                    <input id="select_value2" type="text" name="Размер фигуры" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590404434038" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590404434038" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">В сборке/разобранная</div>
+                                <div class="t-input-block">
+                                    <input id="select_value3" type="text" name="В сборкеразобранная" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590404442660" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590404442660" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Цвет</div>
+                                <div class="t-input-block">
+                                    <input id="select_value4" type="text" name="Цвет" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order_form_item">
+                            <div class="t-input-group t-input-group_nm" data-input-lid="1590926275637" style="margin-bottom:20px;">
+                                <div class="t-input-block">
+                                    <input type="text" name="Name_2" class="t-input js-tilda-rule " value="" placeholder="Настольные фигуры" data-tilda-rule="name" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926277232" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926277232" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Фигура</div>
+                                <div class="t-input-block">
+                                    <input id="select_value5" type="text" name="Фигура_2" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926278610" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926278610" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Размер фигуры</div>
+                                <div class="t-input-block">
+                                    <input id="select_value6" type="text" name="Размер фигуры_2" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926279682" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926279682" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">В сборке/без сборки</div>
+                                <div class="t-input-block">
+                                    <input id="select_value7" type="text" name="В сборкебез сборки" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926281418" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926281418" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Цвет</div>
+                                <div class="t-input-block">
+                                    <input id="select_value8" type="text" name="Цвет_2" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order_form_item">
+                            <div class="t-input-group t-input-group_nm" data-input-lid="1590926282627" style="margin-bottom:20px;">
+                                <div class="t-input-block">
+                                    <input type="text" name="Name_3" class="t-input js-tilda-rule " value="" placeholder="Напольные фигуры" data-tilda-rule="name" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926283507" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926283507" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Фигура</div>
+                                <div class="t-input-block">
+                                    <input id="select_value9" type="text" name="Фигура_3" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926284530" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926284530" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Размер фигуры</div>
+                                <div class="t-input-block">
+                                    <input id="select_value10" type="text" name="Размер фигуры_3" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926286152" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926286152" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">в сборке/ без сборки</div>
+                                <div class="t-input-block">
+                                    <input id="select_value11" type="text" name="в сборке без сборки" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590926286918" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590926286918" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Цвет</div>
+                                <div class="t-input-block">
+                                    <input id="select_value12" type="text" name="Цвет_3" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order_form_item">
+                            <div class="t-input-group t-input-group_nm" data-input-lid="1590926620689" style="margin-bottom:20px;">
+                                <div class="t-input-block">
+                                    <input type="text" name="Name_4" class="t-input js-tilda-rule " value="" placeholder="Итого" data-tilda-rule="name" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_in" data-input-lid="1590404819668" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1590404819668" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Цена</div>
+                                <div class="t-input-block">
+                                    <input type="text" name="Цена" class="t-input js-tilda-rule  " value="" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_nm" data-input-lid="1531306243545" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1531306243545" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Ваше имя</div>
+                                <div class="t-input-block">
+                                    <input type="text" name="Name_5" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                            <div class="t-input-group t-input-group_ph" data-input-lid="1531306540094" style="margin-bottom:20px;">
+                                <div class="t-input-title" data-redactor-toolbar="no" field="nullli_title__1531306540094" style="color:#000;font-weight:400;font-family:Arial;font-size:16px;padding-bottom:5px;">Ваш телефон</div>
+                                <div class="t-input-block">
+                                    <input type="text" name="Phone" class="t-input js-tilda-rule  " value="" data-tilda-req="1" data-tilda-rule="phone" style="color:#000; border:1px solid #000; background-color:#fff; font-size:16px;font-weight:400;height:50px;">
+                                    <div class="t-input-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-form__errorbox-middle">
+                        <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
+                            <div class="t-form__errorbox-text t-text t-text_xs">
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
+                            </div>
+                            <div class="tn-form__errorbox-close js-errorbox-close">
+                                <div class="tn-form__errorbox-close-line tn-form__errorbox-close-line-left"></div>
+                                <div class="tn-form__errorbox-close-line tn-form__errorbox-close-line-right"></div>
+                            </div>
+                        </div>
+                        <style>
+                            .tn-atom
+                            .t-input-error {
+                                position:absolute;
+                                color:red;
+                                background-color:#fff;
+                                padding:8px 10px;
+                                border-radius:2px;
+                                z-index:1;
+                                margin-top:5px;
+                                left:0px;
+                                box-shadow:0px 1px 20px 0px rgba(0, 0, 0, 0.2);
+                            }
+                            .tn-atom
+                            .t-input-error:after {
+                                content:'';
+                                position:absolute;
+                                width:0;
+                                height:0;
+                                border:solid transparent;
+                                border-width:6px;
+                                top:-12px;
+                                left:15%;
+                                border-bottom-color:#fff;
+                            }
+                            .tn-form__errorbox-close {
+                                height:14px;
+                                position:absolute;
+                                right:8px; top:8px;
+                                width:14px; cursor:pointer;
+                            }
+                            .tn-form__errorbox-close-line {
+                                background:#fff none repeat scroll 0 0;
+                                height:1px;
+                                left:0;
+                                margin-top:-1px;
+                                position:absolute;
+                                top:50%;
+                                width:100%;
+                            }
+                            .tn-form__errorbox-close-line-left {
+                                transform:rotate(45deg);
+                            }
+                            .tn-form__errorbox-close-line-right {
+                                transform:rotate(-45deg);
+                            }
+                            .tn-atom
+                            .t-form__errorbox-wrapper,
+                            .tn-form__errorbox-popup {
+                                position:fixed;
+                                bottom:20px;
+                                right:20px;
+                                z-index:10000;
+                                max-width:400px;
+                                min-width:260px;
+                                width:auto;
+                                box-shadow:0 0 3px 1px rgba(0, 0, 0, 0.2);
+                                border-radius:3px;
+                                text-align:left;
+                                font-family:Arial,sans-serf;
+                                background:#F95D51;
+                                padding:10px;
+                            }
+                            .tn-atom
+                            .js-error-control-box
+                            .t-radio__wrapper,
+                            .tn-atom
+                            .js-error-control-box
+                            .t-checkbox__control {
+                                padding:3px;
+                                margin-top:-3px;
+                            }
+                            @media screen and (max-width: 480px) {
+                                .tn-atom
+                                .t-form__errorbox-wrapper,
+                                .tn-form__errorbox-popup {
+                                    max-width:280px;
+                                }
+                            }
+                        </style>
+                        <script>$(".tn-atom .js-errorbox-close").click(function() {	$(this).parent().css("display","none");});</script>
+                    </div>
+
+                    <div class="tn-form__submit" style="">
+                        <button type="submit" class="t-submit submit_form" style="color:#fff;background-color:#ff0000;font-weight:700;font-size:14px;width:160px;height:50px;padding:0 15px;display:block;">Сделать заказ</button>
+                    </div>
+                </div>
+                <div class="t-form__errorbox-bottom">
+                    <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
+                        <div class="t-form__errorbox-text t-text t-text_xs">
+                            <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
+                            <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
+                            <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
+                            <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
+                            <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
+                            <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
+                        </div>
+                        <div class="tn-form__errorbox-close js-errorbox-close">
+                            <div class="tn-form__errorbox-close-line tn-form__errorbox-close-line-left"></div>
+                            <div class="tn-form__errorbox-close-line tn-form__errorbox-close-line-right"></div>
+                        </div>
+                    </div>
+                    <style>
+                        .tn-atom
+                        .t-input-error {
+                            position:absolute;
+                            color:red;
+                            background-color:#fff;
+                            padding:8px 10px;
+                            border-radius:2px;
+                            z-index:1;
+                            margin-top:5px;
+                            left:0px;
+                            box-shadow:0px 1px 20px 0px rgba(0, 0, 0, 0.2);
+                        }
+                        .tn-atom
+                        .t-input-error:after {
+                            content:'';
+                            position:absolute;
+                            width:0;
+                            height:0;
+                            border:solid transparent;
+                            border-width:6px;
+                            top:-12px;
+                            left:15%;
+                            border-bottom-color:#fff;
+                        }
+                        .tn-form__errorbox-close {
+                            height:14px;
+                            position:absolute;
+                            right:8px;
+                            top:8px;
+                            width:14px;
+                            cursor:pointer;
+                        }
+                        .tn-form__errorbox-close-line {
+                            background:#fff none repeat scroll 0 0;
+                            height:1px;
+                            left:0;
+                            margin-top:-1px;
+                            position:absolute;
+                            top:50%;
+                            width:100%;
+                        }
+                        .tn-form__errorbox-close-line-left {
+                            transform:rotate(45deg);
+                        }
+                        .tn-form__errorbox-close-line-right {
+                            transform:rotate(-45deg);
+                        }
+                        .tn-atom
+                        .t-form__errorbox-wrapper,
+                        .tn-form__errorbox-popup {
+                            position:fixed;
+                            bottom:20px;
+                            right:20px;
+                            z-index:10000;
+                            max-width:400px;
+                            min-width:260px;
+                            width:auto;
+                            box-shadow:0 0 3px 1px rgba(0, 0, 0, 0.2);
+                            border-radius:3px;
+                            text-align:left;
+                            font-family:Arial,sans-serf;
+                            background:#F95D51;
+                            padding:10px;
+                        }
+                        .tn-atom
+                        .js-error-control-box
+                        .t-radio__wrapper,
+                        .tn-atom
+                        .js-error-control-box
+                        .t-checkbox__control {
+                            padding:3px;
+                            margin-top:-3px;
+                        }
+                        @media screen and (max-width: 480px) {
+                            .tn-atom
+                            .t-form__errorbox-wrapper,
+                            .tn-form__errorbox-popup {
+                                max-width:280px;
+                            }
+                        }
+
+                    </style>
+                    <script>$(".tn-atom .js-errorbox-close").click(function() {	$(this).parent().css("display","none");});</script>
+                </div>
+                <div style="position: absolute; left: -5000px; bottom:0;">
+                    <input type="text" name="form-spec-comments" value="Its good" class="js-form-spec-comments" tabindex="-1">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        $(function(){
+            let values = {};
+            let summ = 0;
+
+            $('.start_button').click(function() {
+                $('.general_section').removeClass('dis_none');
+                $('.start_general_section').addClass('dis_none');
+                $('.section_order').addClass('dis_none');
+            });
+
+            $('.type_model').click(function() {
+                $('.type_model').removeClass('active_type_model');
+                $(this).addClass('active_type_model');
+
+                let block = $(this).attr("id");
+                block = "." + block;
+                $(".sub_select_con").addClass('dis_none');
+                $(block).removeClass('dis_none');
+
+                if ($(this).attr("id") == 'head') {
+
+                    $('.general_section').css({"background-image": "url(css/img/i3.png)"}); // Вставь ссылку на головы, дебил!
+
+                } else if ($(this).attr("id") == 'tabletop') {
+
+                    $('.general_section').css({"background-image": "url(css/img/i1.png)"}); // Вставь ссылку на столки, дебил!
+
+                } else if ($(this).attr("id") == 'outdoor') {
+
+                    $('.general_section').css({"background-image": "url(css/img/i2.png)"}); // Вставь ссылку на полы, дебил!
+
+                }
+            });
+
+            $('.select_value').change(function() {
+
+                let text = $(this).attr('id');
+                let element = $('#' + text + ' option:selected').attr('id');
+
+                text = '#' + text + " option:selected";
+
+                element = "." + element;
+
+                $('.img_hide').addClass("dis_none");
+                $(element).removeClass("dis_none");
+            });
+
+            $('.select_param').change(function() {
+                // картинки, тоже можно взять
+
+                let text = $(this).attr('id');
+                let element = $('#' + text + ' option:selected').attr('id');
+
+                text = '#' + text + " option:selected";
+
+                element = "." + element;
+
+                $('.img_hide').addClass("dis_none");
+                $(element).removeClass("dis_none");
+
+                // Калькулятор, спизди
+
+                summ = 0;
+                let el = name = $(this).attr('class');
+
+                el = name = el.replace('select_param', '').trim();
+                el = '.' + el + ' option:selected';
+
+                name = name.replace('select_value', '').trim();
+
+                let textItme = $(el).text();
+                let value = $(el).attr('value');
+
+                values[name] = +value;
+
+                for (let value in values) {
+                    summ += values[value];
+                }
+
+                $('.order_price').text('Ваш заказ будет стоить: ' + summ);
+
+                // Заполнение форм
+
+                let inClass = $(this).attr('class');
+                inClass = inClass.replace('select_param', '').trim();
+                inClass = '#' + inClass;
+                $(inClass).val(textItme);
+            });
+
+            $('.make_order').click(function() {
+                $('.general_section').addClass('dis_none');
+                $('.section_order').removeClass('dis_none');
+            });
+        });
+    </script>
+
+</body>
+</html>
